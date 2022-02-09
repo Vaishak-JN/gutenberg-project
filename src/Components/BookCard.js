@@ -17,6 +17,8 @@ export function BookCard({ title, img, author, formats }) {
             window.open(`${formats["text/plain"]}`)
         } else if (formats["text/plain; charset=us-ascii"]) {
             window.open(`${formats["text/plain; charset=us-ascii"]}`)
+        } else if (formats["text/html; charset=utf-8"]) {
+            window.open(`${formats["text/html; charset=utf-8"]}`)
         } else {
             alert("Sorry, no viwable content available")
         }
