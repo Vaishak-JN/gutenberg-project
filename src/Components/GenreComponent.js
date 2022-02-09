@@ -44,7 +44,7 @@ export function GenreComponent({ type, name }) {
         // ***********************
         if (searchValue === "" && !searching) {
             // setAllBooks(() => [])
-            fetch(`http://gutendex.com/books/?mime_type=image%2Fjpeg&page=${page}&topic=${type}`)
+            fetch(`https://gutendex.com/books/?mime_type=image%2Fjpeg&page=${page}&topic=${type}`)
                 .then(res => res.json())
                 .then(data => setAllBooks(prev => [...prev, ...data.results]))
                 .then(() => setLoading(false))
@@ -52,7 +52,7 @@ export function GenreComponent({ type, name }) {
         } else if (searchValue !== "" && searching) {
             setAllBooks(() => [])
 
-            fetch(`http://gutendex.com/books/?mime_type=image%2Fjpeg&page=${page}&topic=${type}&search=${searchValue}`)
+            fetch(`https://gutendex.com/books/?mime_type=image%2Fjpeg&page=${page}&topic=${type}&search=${searchValue}`)
                 .then(res => res.json())
                 .then(data => setAllBooks(prev => [...prev, ...data.results]))
                 .then(() => setLoading(false))
